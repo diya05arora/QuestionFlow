@@ -13,6 +13,16 @@ const eslintConfig = defineConfig([
     "build/**",
     "next-env.d.ts",
   ]),
+  {
+    settings: {
+      'import/resolver': {
+        typescript: {
+          // Point to the project's tsconfig so ESLint resolves `@/*` -> `src/*`
+          project: './tsconfig.json',
+        },
+      },
+    },
+  },
 ]);
 
 export default eslintConfig;
